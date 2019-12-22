@@ -18,3 +18,21 @@ train_data = read_idx('train-images.idx3-ubyte')
 train_labels = read_idx('train-labels.idx1-ubyte')
 test_data = read_idx('t10k-images.idx3-ubyte')
 test_labels = read_idx('t10k-labels.idx1-ubyte')
+
+def step_fn(x):
+    i = 0
+    y = np.empty([10,1])
+    for each in x:
+        if each >= 0:
+            y[i] = 1.0
+        else:
+            y[i] = 0.0
+        i += 1
+    return y
+
+w = np.random.uniform(-1, 1, size=(10,784))
+n = 50
+epoch = 0
+threshold = 0.0
+learning_rate = 1.0
+errors = []
