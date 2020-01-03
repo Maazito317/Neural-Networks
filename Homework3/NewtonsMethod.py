@@ -6,11 +6,9 @@ import time
 start = time.clock()
 
 x = 0.7
-y = 0.2
-learning_rate = 0.01
-
+y = 0.1
 w = np.array([x, y])
-
+learning_rate = 0.01
 w_x = []
 w_y = []
 f = []
